@@ -1,2 +1,0 @@
-# Snake-Clone
-Snake Clone
