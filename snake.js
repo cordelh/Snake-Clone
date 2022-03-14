@@ -93,20 +93,47 @@ class Snake {
     }
 
     draw(ctx) {
-        const image = ASSET_MANAGER.getAsset("./resources/head_right.png");
-        //const image2 = ASSET_MANAGER.getAsset("./resources/head_up.png");
+        
+        let i = 1;
         this.body.forEach(vector => {
-            ctx.drawImage(image,
-                vector.x*CELL_SIZE, 
-                vector.y*CELL_SIZE,
-                CELL_SIZE, CELL_SIZE
-            );
+            
+            if (i) {
+                //ctx.fillStyle = "#00FF00"
+                let image;
+                switch(this.facing) {
+                    case 0:
+                        image = ASSET_MANAGER.getAsset("./resources/head_right.png");
+                        break;
+                    case 1:
+                        image = ASSET_MANAGER.getAsset("./resources/head_left.png");
+                        break;
+                    case 2:
+                        image = ASSET_MANAGER.getAsset("./resources/head_up.png");
+                        break;
+                    case 3:
+                        image = ASSET_MANAGER.getAsset("./resources/head_down.png");
+                        break;
+                    default:
+                        image = ASSET_MANAGER.getAsset("./resources/head_left.png");
+                }
+                //const 
+                //const image2 = ASSET_MANAGER.getAsset("./resources/head_up.png");
+                ctx.drawImage(image,
+                    vector.x*CELL_SIZE, 
+                    vector.y*CELL_SIZE,
+                    CELL_SIZE, CELL_SIZE
+                );
+            } else {
+                ctx.beginPath();
+            
+            ctx.rect(vector.x*CELL_SIZE, vector.y*CELL_SIZE, CELL_SIZE, CELL_SIZE);
+            ctx.stroke();
+                ctx.fillStyle = "#000FF0"
+                ctx.fillRect(vector.x*CELL_SIZE, vector.y*CELL_SIZE, CELL_SIZE, CELL_SIZE);
+            }
+            
+            i = 0;
+            // 
         })
     }
 }
-
-//can food spawn in snake? Shouldn't
-//Bug where go opposite direction.
-//Start and end game.
-//Add music, scores, high scores, timer, background.
-//Implement images for snake.

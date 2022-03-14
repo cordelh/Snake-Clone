@@ -11,6 +11,8 @@ ASSET_MANAGER.queueDownload("./resources/apple.png");
 ASSET_MANAGER.queueDownload("./resources/snake.png");
 ASSET_MANAGER.queueDownload("./resources/head_right.png");
 ASSET_MANAGER.queueDownload("./resources/head_up.png");
+ASSET_MANAGER.queueDownload("./resources/head_left.png");
+ASSET_MANAGER.queueDownload("./resources/head_down.png");
 ASSET_MANAGER.queueDownload("./resources/game_over.png");
 ASSET_MANAGER.queueDownload("./resources/Play.png");
 ASSET_MANAGER.queueDownload("./resources/play_again.png");
